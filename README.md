@@ -1,13 +1,13 @@
-# React NFT
+# React Workshop
 
-React No Framework Toolkit (NFT) is a step-by-step guide to build a React app from scratch.
+React Workshop going through a step-by-step process to build a production-ready React app from scratch.
 
 ## Features
 
-The guide provides the following features:
+The final app has the following features:
 
 **Core**
-* Bootstrapping with [create-react-app].
+* Bootstrappe with [create-react-app].
 * Utility-first CSS framework with [tailwindcss].
 * UI component explorer with [storybook].
 * Hooks for fetching, caching and updating with [react-query].
