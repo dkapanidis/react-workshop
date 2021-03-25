@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { CgSpinner } from 'react-icons/cg';
-import ReactTooltip from 'react-tooltip';
 import useMousetrap from '../../hooks/use-mousetrap';
+import TooltipWithShortcut from '../tooltips/TooltipWithShortcut';
 
 export interface ButtonProps {
   loading?: boolean,
@@ -13,8 +13,8 @@ export interface ButtonProps {
   /**
    * Shortcut key.
    */
-   shortcut?: string,
-   onClick?(): void
+  shortcut?: string,
+  onClick?(): void
 }
 export default function Button({ loading = false, disabled = false, text, autofocus = false, type = "primary", description, shortcut, onClick }: ButtonProps) {
   const typeClass = useMemo(() => {
@@ -35,26 +35,21 @@ export default function Button({ loading = false, disabled = false, text, autofo
 
   useMousetrap(shortcut?.toLowerCase() || "", click);
 
-  return <button data-tip data-for={text}
-    className={`relative items-center ${typeClass}
+  return <TooltipWithShortcut description={description} shortcut={shortcut} placement="bottom">
+    <button data-tip data-for={text}
+      className={`relative items-center ${typeClass}
       px-3 py-1 rounded-md font-medium text-sm tracking-tight 
       focus:outline-none focus:ring disabled:opacity-50`}
-    autoFocus={autofocus}
-    disabled={loading || disabled}
-    type="submit"
-    name="action"
-    onClick={click}
-    value="submit">
-    {currentLoading && <div className="absolute inset-1/2 -mt-2.5 -mx-2.5"><CgSpinner className="icon-spin" size={20} /></div>}
-    <span className={`${loading && 'opacity-0'}`}>
-      {text}&#8203;
+      autoFocus={autofocus}
+      disabled={loading || disabled}
+      type="submit"
+      name="action"
+      onClick={click}
+      value="submit">
+      {currentLoading && <div className="absolute inset-1/2 -mt-2.5 -mx-2.5"><CgSpinner className="icon-spin" size={20} /></div>}
+      <span className={`${loading && 'opacity-0'}`}>
+        {text}&#8203;
     </span>
-    {description && <ReactTooltip id={text} className="tooltip" place="bottom" effect="solid" delayShow={400} border={false} backgroundColor="transparent">
-      <div className="bg-gray-800 p-1 border rounded-md border-gray-700 px-2 text-xs text-gray-300 font-light">
-        {description}
-        {shortcut && <span className="text-xs text-gray-200">&nbsp;&nbsp;&nbsp;&nbsp;<code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">{shortcut}</code></span>}
-      </div>
-    </ReactTooltip>
-    }
-  </button>
+    </button>
+  </TooltipWithShortcut>
 }

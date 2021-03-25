@@ -2,8 +2,8 @@ import React from 'react';
 import { MdHome, MdInfo, MdLocalMovies } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import SplitPane from 'react-split-pane';
-import ReactTooltip from 'react-tooltip';
 import { useLocalStorage } from 'react-use';
+import TooltipWithShortcut from '../ui/tooltips/TooltipWithShortcut';
 
 interface SideMenuProps { children: any }
 export default function SideMenu({ children }: SideMenuProps) {
@@ -31,21 +31,17 @@ function Menu() {
   )
 }
 
+
 // navigation button on menu
 interface NavButtonProps { to: string, title: string, description?: string, shortcut?: string, exact?: boolean, icon?: any }
 function NavButton({ exact = false, to, title, description, shortcut, icon }: NavButtonProps) {
   return <div>
-    <NavLink data-tip data-for={title} activeClassName="text-blue-400  bg-gray-800" exact={exact} to={to} className="
+    <TooltipWithShortcut description={description} shortcut={shortcut} placement="right">
+      <NavLink data-tip data-for={title} activeClassName="text-blue-400  bg-gray-800" exact={exact} to={to} className="
   my-1 mx-4 px-3 py-2 rounded-lg text-sm font-medium
  hover:bg-gray-800 flex items-center
   focus:outline-none space-x-1
 ">{icon}<span className="text-gray-300">{title}</span></NavLink>
-    {description && <ReactTooltip offset={{ right: 2 }} id={title} className="tooltip" place="right" effect="solid" delayShow={400} border={false} backgroundColor="transparent">
-      <div className="bg-gray-800 p-1 border rounded-md border-gray-700 px-2 text-xs text-gray-300 font-light">
-        {description}
-        {shortcut && <span className="text-xs text-gray-200"> · <code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">G</code> then <code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">{shortcut}</code></span>}
-      </div>
-    </ReactTooltip>
-    }
+    </TooltipWithShortcut>
   </div>
 }

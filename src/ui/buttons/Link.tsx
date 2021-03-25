@@ -1,8 +1,7 @@
 import React, { useMemo } from 'react';
-import { NavLink } from 'react-router-dom';
-import ReactTooltip from 'react-tooltip';
+import { NavLink, useHistory } from 'react-router-dom';
 import useMousetrap from '../../hooks/use-mousetrap';
-import { useHistory } from 'react-router-dom';
+import TooltipWithShortcut from '../tooltips/TooltipWithShortcut';
 
 export interface LinkProps {
   /**
@@ -41,18 +40,13 @@ function Link({ to, children, description, shortcut, type = "primary" }: LinkPro
   useMousetrap(shortcut?.toLowerCase() || "", () => history.push(to));
 
   return (
-    <NavLink data-tip data-for={to} to={to} className="focus:outline-none"><button type="button" className={`h-7 relative items-center ${typeClass}
+    <TooltipWithShortcut description={description} shortcut={shortcut}>
+      <NavLink data-tip data-for={to} to={to} className="focus:outline-none"><button type="button" className={`h-7 relative items-center ${typeClass}
     px-3 py-1 rounded-md font-medium text-sm tracking-tight 
     focus:outline-none focus:ring disabled:opacity-50`}
-    >{children}</button>
-      {description && <ReactTooltip id={to} multiline={false} className="tooltip" place="bottom" effect="solid" delayShow={400} border={false} backgroundColor="transparent">
-        <div className="bg-gray-800 p-1 border rounded-md border-gray-700 px-2 text-xs text-gray-300 font-light">
-          {description}
-          {shortcut && <span className="text-xs text-gray-200">&nbsp;&nbsp;&nbsp;&nbsp;<code className="bg-gray-700 inset-0 px-1 py-0.5 rounded-sm text-xs">{shortcut}</code></span>}
-        </div>
-      </ReactTooltip>
-      }
-    </NavLink>
+      >{children}</button>
+      </NavLink>
+    </TooltipWithShortcut>
   );
 }
 
