@@ -1,5 +1,5 @@
+import { Home, Info, Movie } from '@material-ui/icons';
 import React from 'react';
-import { MdHome, MdInfo, MdLocalMovies } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import SplitPane from 'react-split-pane';
 import { useLocalStorage } from 'react-use';
@@ -24,9 +24,9 @@ export default function SideMenu({ children }: SideMenuProps) {
 function Menu() {
   return (
     <nav className="bg-gray-900 w-full flex flex-col h-full pt-10 text-gray-500">
-      <NavButton icon={<MdHome className="text-current" />} exact to='/' title="Home" description="Home page" shortcut="H" />
-      <NavButton icon={<MdLocalMovies className="text-current" />} exact to='/movies' title="Movies" description="Movies" shortcut="M" />
-      <NavButton icon={<MdInfo className="text-current" />} to='/about' title="About" description="About application" shortcut="A" />
+      <NavButton icon={<Home fontSize="small" />} exact to='/' title="Home" description="Home page" shortcut="H" />
+      <NavButton icon={<Movie fontSize="small" />} exact to='/movies' title="Movies" description="Movies" shortcut="M" />
+      <NavButton icon={<Info fontSize="small" />} to='/about' title="About" description="About application" shortcut="A" />
     </nav>
   )
 }

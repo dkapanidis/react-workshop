@@ -1,5 +1,5 @@
+import { Edit } from '@material-ui/icons';
 import React, { useEffect, useState } from 'react';
-import { BiEdit } from 'react-icons/bi';
 import { useHistory, useLocation } from 'react-router-dom';
 import moviesActions from '../../actions/moviesActions';
 import SuspenseContainer from '../../containers/SuspenseContainer';
@@ -33,7 +33,7 @@ export default function ViewMovie({ id }: ViewMovieProps) {
     <Page>
       <Mousetrap key="esc" to="/movies" />
       <Header back="/movies" text={`Movies: ${id}`}>
-        <Link to={`/movies/${id}/edit`} type="secondary" description="Edit Movie" shortcut="E"><BiEdit /></Link>
+        <Link to={`/movies/${id}/edit`} type="secondary" description="Edit Movie" shortcut="E"><Edit fontSize="small"/></Link>
         <Button type="danger" text="Delete" onClick={openDialog} description="Remove Movie" shortcut="#" />
       </Header>
       <Card>

@@ -16,9 +16,8 @@ The final app has the following features:
 * Page navigation with [react-router].
 * React hooks with [react-use].
 * Promise based HTTP client with [axios].
-* Icons with [react-icons].
+* Icons & Tooltips with [material-ui].
 * Resizable Pane with [react-split-pane].
-* Tooltips with [material-ui].
 * Keyboard shortcuts with [mousetrap].
 * API mocking library with [miragejs].
 
@@ -29,9 +28,8 @@ The final app has the following features:
 [react-router]: https://reactrouter.com/web/guides/quick-start
 [react-use]: https://streamich.github.io/react-use
 [axios]: https://github.com/axios/axios
-[react-icons]: https://react-icons.github.io/react-icons
-[react-split-pane]: https://github.com/tomkp/react-split-pane
 [material-ui]: https://material-ui.com/
+[react-split-pane]: https://github.com/tomkp/react-split-pane
 [mousetrap]: https://github.com/ccampbell/mousetrap
 [miragejs]: https://miragejs.com/
 

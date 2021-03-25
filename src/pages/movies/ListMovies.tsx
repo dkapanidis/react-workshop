@@ -1,5 +1,5 @@
+import { Add } from '@material-ui/icons';
 import React, { useEffect } from 'react';
-import { BiPlus } from 'react-icons/bi';
 import { useLocation } from 'react-router-dom';
 import SuspenseContainer from '../../containers/SuspenseContainer';
 import moviesStore from '../../stores/moviesStore';
@@ -13,7 +13,7 @@ export default function ListMovies() {
   return (
     <Page>
       <Header text="Movies">
-        <Link to="/movies/new" description="Create new movie" shortcut="C"><BiPlus/></Link>
+        <Link to="/movies/new" description="Create new movie" shortcut="C"><Add fontSize="small"/></Link>
       </Header>
       <Card>
         <SuspenseContainer>
