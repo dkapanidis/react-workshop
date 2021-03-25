@@ -3,7 +3,7 @@ import { MdHome, MdInfo, MdLocalMovies } from 'react-icons/md';
 import { NavLink } from 'react-router-dom';
 import SplitPane from 'react-split-pane';
 import { useLocalStorage } from 'react-use';
-import TooltipWithShortcut from '../ui/tooltips/TooltipWithShortcut';
+import TooltipWithShortcut from '../tooltips/TooltipWithShortcut';
 
 interface SideMenuProps { children: any }
 export default function SideMenu({ children }: SideMenuProps) {

@@ -4,7 +4,7 @@ import {
   BrowserRouter as Router, Route, Switch
 } from "react-router-dom";
 import './App.css';
-import SideMenu from './layouts/SideMenu';
+import SideMenu from './ui/layouts/SideMenu';
 import About from './pages/About';
 import Home from './pages/Home';
 import Movies from './pages/movies';

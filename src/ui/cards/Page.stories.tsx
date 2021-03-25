@@ -1,7 +1,7 @@
 // also exported from '@storybook/react' if you can deal with breaking changes in 6.1
 import { Meta, Story } from '@storybook/react/types-6-0';
 import React from 'react';
-import SideMenu from '../../layouts/SideMenu';
+import SideMenu from '../layouts/SideMenu';
 import Button from '../buttons/Button';
 import Header from '../typography/Header';
 import Card from './Card';

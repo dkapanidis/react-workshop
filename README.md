@@ -18,7 +18,7 @@ The final app has the following features:
 * Promise based HTTP client with [axios].
 * Icons with [react-icons].
 * Resizable Pane with [react-split-pane].
-* Tooltips with [react-tooltip].
+* Tooltips with [material-ui].
 * Keyboard shortcuts with [mousetrap].
 * API mocking library with [miragejs].
 
@@ -31,7 +31,7 @@ The final app has the following features:
 [axios]: https://github.com/axios/axios
 [react-icons]: https://react-icons.github.io/react-icons
 [react-split-pane]: https://github.com/tomkp/react-split-pane
-[react-tooltip]: https://github.com/wwayne/react-tooltip
+[material-ui]: https://material-ui.com/
 [mousetrap]: https://github.com/ccampbell/mousetrap
 [miragejs]: https://miragejs.com/
 
@@ -57,8 +57,8 @@ During this chapter we setup the `react` app, install [tailwindcss], configure p
 3. [Add Page Navigation](doc/chapter-1/3.add-page-navigation.md)
 4. [Prevent Overscrolling](doc/chapter-1/4.prevent-overscrolling.md)
 5. [Add SideMenu](doc/chapter-1/5.add-sidemenu.md)
-6. [Add SideMenu Tooltips](doc/chapter-1/6.add-sidemenu-tooltips.md)
-7. [Add SideMenu Keyboard Shortcuts](doc/chapter-1/7.add-sidemenu-keyboard-shortcuts.md)
+6. [Add Tooltips](doc/chapter-1/6.add-tooltips.md)
+7. [Add Keyboard Shortcuts](doc/chapter-1/7.add-keyboard-shortcuts.md)
 8. [Add Architecture](doc/chapter-1/8.add-architecture.md)
 
 ### Chapter 2
