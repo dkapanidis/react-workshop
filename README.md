@@ -7,7 +7,7 @@ React Workshop going through a step-by-step process to build a production-ready 
 The final app has the following features:
 
 **Core**
-* Bootstrappe with [create-react-app].
+* Bootstrapp with [create-react-app].
 * Utility-first CSS framework with [tailwindcss].
 * UI component explorer with [storybook].
 * Hooks for fetching, caching and updating with [react-query].
